@@ -13,7 +13,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "maersk" {
+  name     = "maersk-resources"
   location = "West Europe"
 }
