@@ -1,15 +1,15 @@
 #Network
-resource "azurerm_virtual_network" "example" {
-  name                = "example-vnet"
+resource "azurerm_virtual_network" "maersk" {
+  name                = "maersk-vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.maersk.location
+  resource_group_name = azurerm_resource_group.maersk.name
 }
 
-resource "azurerm_subnet" "example-1" {
-  name                 = "example-subnet-1"
-  resource_group_name  = azurerm_resource_group.example.name
-  virtual_network_name = azurerm_virtual_network.example.name
+resource "azurerm_subnet" "maersk-1" {
+  name                 = "maersk-subnet-1"
+  resource_group_name  = azurerm_resource_group.maersk.name
+  virtual_network_name = azurerm_virtual_network.maersk.name
   address_prefixes     = ["10.0.1.0/24"]
 
   delegation {
@@ -22,10 +22,10 @@ resource "azurerm_subnet" "example-1" {
   }
 }
 
-resource "azurerm_subnet" "example-2" {
-  name                 = "example-subnet-1"
-  resource_group_name  = azurerm_resource_group.example.name
-  virtual_network_name = azurerm_virtual_network.example.name
+resource "azurerm_subnet" "maersk-2" {
+  name                 = "maersk-subnet-1"
+  resource_group_name  = azurerm_resource_group.maersk.name
+  virtual_network_name = azurerm_virtual_network.maersk.name
   address_prefixes     = ["10.0.2.0/24"]
 
   delegation {
